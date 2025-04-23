@@ -157,7 +157,7 @@ function ai_captcha_enqueue_scripts() {
 
     wp_enqueue_style(
         'ai-captcha-style',
-        esc_url(plugins_url('assets/css/ai-captcha.css', __FILE__)),
+        esc_url(plugins_url('assets/css/ai-captcha.css', __DIR__)),
         [],
         AI_CAPTCHA_VERSION
     );
