@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AI Captcha Protection\n"
-"POT-Creation-Date: 2025-04-23 07:12+0330\n"
-"PO-Revision-Date: 2025-04-23 07:16+0330\n"
+"Project-Id-Version: AI Captcha\n"
+"POT-Creation-Date: 2025-04-23 08:33+0330\n"
+"PO-Revision-Date: 2025-04-23 08:35+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -25,45 +25,45 @@ msgstr ""
 msgid "AI Captcha Settings"
 msgstr ""
 
-#: includes/admin-settings.php:39
+#: includes/admin-settings.php:70
 msgid "API Keys"
 msgstr ""
 
-#: includes/admin-settings.php:46
+#: includes/admin-settings.php:77
 msgid "Site Key"
 msgstr ""
 
-#: includes/admin-settings.php:54
+#: includes/admin-settings.php:85
 msgid "Secret Key"
 msgstr ""
 
-#: includes/admin-settings.php:62
+#: includes/admin-settings.php:93
 msgid "Enable on Forms"
-msgstr "فعال سازی بر روی فرم ها"
+msgstr "فعال سازی فرم ها"
 
-#: includes/admin-settings.php:85
+#: includes/admin-settings.php:116
 msgid "Login Form"
-msgstr "فرم ورود به سایت"
+msgstr "فرم ورود"
 
-#: includes/admin-settings.php:86
+#: includes/admin-settings.php:117
 msgid "Registration Form"
 msgstr "فرم ثبت نام"
 
-#: includes/admin-settings.php:87
+#: includes/admin-settings.php:118
 msgid "Forget Form"
 msgstr "فرم بازیابی رمز عبور"
 
-#: includes/admin-settings.php:88
+#: includes/admin-settings.php:119
 msgid "Comment Form"
 msgstr "فرم نظرات"
 
-#: includes/admin-settings.php:89
+#: includes/admin-settings.php:120
 msgid "Contact Form 7"
-msgstr "پلاگین CF7"
+msgstr "فرم ارتباط با ما 7"
 
-#: includes/admin-settings.php:90
+#: includes/admin-settings.php:121
 msgid "WooCommerce Checkout"
-msgstr "صفحه تسویه حساب ووکامرس"
+msgstr "صفحه پرداخت ووکامرس"
 
 #: includes/frontend-handler.php:87 includes/verification.php:9
 msgid "Please complete the captcha verification."
@@ -74,25 +74,33 @@ msgid "Captcha verification failed. Please try again."
 msgstr "تأیید کپچا ناموفق بود. لطفا دوباره امتحان کنید."
 
 #: includes/verification.php:15
-msgid "Error connecting to the CAPTCHA server."
-msgstr "خطا در اتصال به سرور CAPTCHA."
+msgid "captcha_server_error : Error connecting to the CAPTCHA server."
+msgstr ""
 
 #: includes/verification.php:19
 msgid "<strong>Error</strong>: AI Captcha verification failed!"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "AI Captcha Protection"
-msgstr "حفاظت از کپچای هوش مصنوعی"
+msgid "AI Captcha"
+msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://dvhost.ir"
-msgstr "https://dvhost.ir"
+msgid "https://github.com/dev-ir/wp-aiCaptcha"
+msgstr ""
 
 #. Description of the plugin/theme
-msgid "AI-powered captcha for all WordPress forms."
-msgstr "کپچای مبتنی بر هوش مصنوعی برای همه فرم های وردپرس."
+msgid ""
+"AI-powered invisible captcha for WordPress and WooCommerce forms. Seamless "
+"protection without disrupting users."
+msgstr ""
+"کپچای نامرئی مبتنی بر هوش مصنوعی برای فرم های وردپرس و ووکامرس. محافظت "
+"یکپارچه بدون ایجاد اختلال در کاربران."
+
+#. Author of the plugin/theme
+msgid "DVHOST.IR"
+msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "DVHOST_CLOUD"
-msgstr "DVHOST_CLOUD"
+msgid "https://dvhost.ir"
+msgstr ""

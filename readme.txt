@@ -1,9 +1,10 @@
 === AI Captcha ===
-Contributors: devir, mahdiebrahimi
-Tags: captcha, ai captcha, security, login, forms, woocommerce, spam protection, invisible captcha
-Requires at least: 5.0
-Tested up to: 6.5
+Contributors: dev-ir
+Tags: captcha, ai captcha, security, spam protection, invisible captcha
+Requires at least: 6.0
+Tested up to: 6.8
 Requires PHP: 7.2
+Text Domain: ai-captcha
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -59,7 +60,7 @@ First release. Adds AI CAPTCHA support across essential WordPress forms.
 
 == Credits ==
 
-Developed by Mahdi Ebrahimi.  
+Developed by DVHOST.  
 GitHub: https://github.com/dev-ir/wp-aiCaptcha
 
 == License ==

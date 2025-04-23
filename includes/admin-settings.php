@@ -1,21 +1,19 @@
 <?php
 add_action('admin_menu', 'ai_captcha_add_admin_menu');
-function ai_captcha_add_admin_menu()
-{
+function ai_captcha_add_admin_menu() {
     add_options_page(
-        'AI Captcha Settings',
-        'AI Captcha',
+        __('AI Captcha Settings', 'ai-captcha'),
+        __('AI Captcha', 'ai-captcha'),
         'manage_options',
         'ai-captcha',
         'ai_captcha_settings_page'
     );
 }
 
-function ai_captcha_settings_page()
-{
-?>
+function ai_captcha_settings_page() {
+    ?>
     <div class="wrap">
-        <h1><?php _e('AI Captcha Settings',AI_CAPTCHA_LANG);?></h1>
+        <h1><?php echo esc_html(__('AI Captcha Settings', 'ai-captcha')); ?></h1>
         <form method="post" action="options.php">
             <?php
             settings_fields('ai_captcha_settings');
@@ -24,26 +22,75 @@ function ai_captcha_settings_page()
             ?>
         </form>
     </div>
-<?php
+    <?php
+}
+
+// توابع Sanitize اختصاصی
+function ai_captcha_sanitize_site_key($input) {
+    return sanitize_text_field($input);
+}
+
+function ai_captcha_sanitize_secret_key($input) {
+    return sanitize_text_field($input);
+}
+
+function ai_captcha_sanitize_forms($input) {
+    if (!is_array($input)) {
+        return [];
+    }
+    
+    $allowed_forms = ['login', 'register', 'lostpassword', 'comment', 'contact', 'woocommerce'];
+    $sanitized = [];
+    
+    foreach ($input as $form) {
+        $form = sanitize_text_field($form);
+        if (in_array($form, $allowed_forms)) {
+            $sanitized[] = $form;
+        }
+    }
+    
+    return $sanitized;
 }
 
 add_action('admin_init', 'ai_captcha_register_settings');
-function ai_captcha_register_settings()
-{
-    register_setting('ai_captcha_settings', 'ai_captcha_site_key');
-    register_setting('ai_captcha_settings', 'ai_captcha_secret_key');
-    register_setting('ai_captcha_settings', 'ai_captcha_forms');
+function ai_captcha_register_settings() {
+    register_setting(
+        'ai_captcha_settings',
+        'ai_captcha_site_key',
+        [
+            'sanitize_callback' => 'ai_captcha_sanitize_site_key',
+            'show_in_rest' => false
+        ]
+    );
+
+    register_setting(
+        'ai_captcha_settings',
+        'ai_captcha_secret_key',
+        [
+            'sanitize_callback' => 'ai_captcha_sanitize_secret_key',
+            'show_in_rest' => false
+        ]
+    );
+
+    register_setting(
+        'ai_captcha_settings',
+        'ai_captcha_forms',
+        [
+            'sanitize_callback' => 'ai_captcha_sanitize_forms',
+            'show_in_rest' => false
+        ]
+    );
 
     add_settings_section(
         'ai_captcha_main',
-        __('API Keys',AI_CAPTCHA_LANG),
+        __('API Keys', 'ai-captcha'),
         null,
         'ai-captcha'
     );
 
     add_settings_field(
         'ai_captcha_site_key',
-        __('Site Key',AI_CAPTCHA_LANG),
+        __('Site Key', 'ai-captcha'),
         'ai_captcha_site_key_callback',
         'ai-captcha',
         'ai_captcha_main'
@@ -51,7 +98,7 @@ function ai_captcha_register_settings()
 
     add_settings_field(
         'ai_captcha_secret_key',
-        __('Secret Key',AI_CAPTCHA_LANG),
+        __('Secret Key', 'ai-captcha'),
         'ai_captcha_secret_key_callback',
         'ai-captcha',
         'ai_captcha_main'
@@ -59,39 +106,47 @@ function ai_captcha_register_settings()
 
     add_settings_field(
         'ai_captcha_forms',
-        __('Enable on Forms' , AI_CAPTCHA_LANG),
+        __('Enable on Forms', 'ai-captcha'),
         'ai_captcha_forms_callback',
         'ai-captcha',
         'ai_captcha_main'
     );
 }
 
-function ai_captcha_site_key_callback()
-{
+function ai_captcha_site_key_callback() {
     $site_key = get_option('ai_captcha_site_key');
-    echo '<input type="text" name="ai_captcha_site_key" value="' . esc_attr($site_key) . '" class="regular-text">';
+    printf(
+        '<input type="text" name="ai_captcha_site_key" value="%s" class="regular-text">',
+        esc_attr($site_key)
+    );
 }
 
-function ai_captcha_secret_key_callback()
-{
+function ai_captcha_secret_key_callback() {
     $secret_key = get_option('ai_captcha_secret_key');
-    echo '<input type="text" name="ai_captcha_secret_key" value="' . esc_attr($secret_key) . '" class="regular-text">';
+    printf(
+        '<input type="text" name="ai_captcha_secret_key" value="%s" class="regular-text">',
+        esc_attr($secret_key)
+    );
 }
 
-function ai_captcha_forms_callback()
-{
-    $forms = get_option('ai_captcha_forms', ['login', 'register', 'comment', 'contact', 'woocommerce']);
+function ai_captcha_forms_callback() {
+    $forms = (array) get_option('ai_captcha_forms', ['login', 'register', 'comment', 'contact', 'woocommerce']);
     $available_forms = [
-        'login'         => __('Login Form', AI_CAPTCHA_LANG),
-        'register'      => __('Registration Form', AI_CAPTCHA_LANG),
-        'lostpassword'  => __('Forget Form', AI_CAPTCHA_LANG),
-        'comment'       => __('Comment Form', AI_CAPTCHA_LANG),
-        'contact'       => __('Contact Form 7', AI_CAPTCHA_LANG),
-        'woocommerce'   => __('WooCommerce Checkout', AI_CAPTCHA_LANG)
+        'login'         => __('Login Form', 'ai-captcha'),
+        'register'      => __('Registration Form', 'ai-captcha'),
+        'lostpassword'  => __('Forget Form', 'ai-captcha'),
+        'comment'       => __('Comment Form', 'ai-captcha'),
+        'contact'       => __('Contact Form 7', 'ai-captcha'),
+        'woocommerce'   => __('WooCommerce Checkout', 'ai-captcha')
     ];
 
     foreach ($available_forms as $key => $label) {
         $checked = in_array($key, $forms) ? 'checked' : '';
-        echo '<label><input type="checkbox" name="ai_captcha_forms[]" value="' . esc_attr($key) . '" ' . $checked . '> ' . esc_html($label) . '</label><br>';
+        printf(
+            '<label><input type="checkbox" name="ai_captcha_forms[]" value="%s" %s> %s</label><br>',
+            esc_attr($key),
+            esc_attr($checked),
+            esc_html($label)
+        );
     }
 }
