@@ -1,20 +1,20 @@
 <?php
-
 /**
- * Plugin Name: AI Captcha Protection
- * Plugin URI: https://dvhost.ir
- * Description: AI-powered captcha for all WordPress forms.
- * Requires at least: 5.8
- * Requires PHP: 5.6
+ * Plugin Name: AI Captcha
+ * Plugin URI: https://github.com/dev-ir/wp-aiCaptcha
+ * Description: AI-powered invisible captcha for WordPress and WooCommerce forms. Seamless protection without disrupting users.
  * Version: 1.0.0
- * Author URI: DVHOST_CLOUD
+ * Requires at least: 5.8
+ * Requires PHP: 7.2
+ * Author: DVHOST.IR
+ * Author URI: https://dvhost.ir
  * License: GPLv2 or later
- * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * Text Domain: ai-capcha
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: wp-aicaptcha
  * Domain Path: /languages
- *
- * @package ai-capcha
+ * @package wp-aicaptcha
  */
+
 defined('ABSPATH') or die('No script kiddies please!');
 
 define('AI_CAPTCHA_VERSION', '1.0.0');
