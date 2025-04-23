@@ -3,7 +3,7 @@
  * Plugin Name: AI Captcha
  * Plugin URI: https://github.com/dev-ir/aiCaptcha
  * Description: AI-powered invisible captcha for WordPress and WooCommerce forms. Seamless protection without disrupting users.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 5.8
  * Requires PHP: 7.2
  * Author: DVHOST.IR
@@ -17,7 +17,7 @@
 
 defined('ABSPATH') or die('No script kiddies please!');
 
-define('AI_CAPTCHA_VERSION', '1.0.0');
+define('AI_CAPTCHA_VERSION', '1.0.1');
 define('AI_CAPTCHA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
 if (! defined('AI_CAPTCHA_PLUGIN_URL')) {
