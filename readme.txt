@@ -1,5 +1,5 @@
 === AI Captcha ===
-Contributors: dev-ir
+Contributors: dev-ir , mahdiebrahimii
 Tags: captcha, ai captcha, security, spam protection, invisible captcha
 Requires at least: 6.0
 Tested up to: 6.8

@@ -1,12 +1,12 @@
 <?php
 /**
  * Plugin Name: AI Captcha
- * Plugin URI: https://github.com/dev-ir/aiCaptcha
+ * Plugin URI: https://github.com/dev-ir/ai-captcha
  * Description: AI-powered invisible captcha for WordPress and WooCommerce forms. Seamless protection without disrupting users.
  * Version: 1.0.1
  * Requires at least: 5.8
  * Requires PHP: 7.2
- * Author: DVHOST.IR
+ * Author: DVHOST_CLOUD
  * Author URI: https://dvhost.ir
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html

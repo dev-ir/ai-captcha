@@ -38,7 +38,7 @@ aiCaptcha is a next-generation WordPress security plugin that:
 
 ### 📊 Preview
 <details>
-![aiCaptcha Banner](https://github.com/dev-ir/wp-aiCaptcha/blob/master/screenshot.png) <!-- Optional: Add a banner image later -->
+![aiCaptcha Banner](https://github.com/dev-ir/ai-captcha/blob/master/screenshot.png) <!-- Optional: Add a banner image later -->
 </details>
 
 ## 📦 Installation
@@ -50,4 +50,4 @@ aiCaptcha is a next-generation WordPress security plugin that:
 
 2. **WP-CLI**:
    ```bash
-   wp plugin install https://github.com/dev-ir/wp-aiCaptcha/archive/main.zip --activate
+   wp plugin install https://github.com/dev-ir/ai-captcha/archive/main.zip --activate
